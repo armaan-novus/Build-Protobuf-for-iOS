@@ -9,11 +9,11 @@ echo "$(tput sgr0)"
 # The version of Protobuf to build.  It must match
 # one of the values found in the releases section of the github repo.
 # It can be set to "master" when building directly from the github repo.
-PROTOBUF_VERSION=2.6.1
+PROTOBUF_VERSION=3.17.3
 
 # Set to "YES" if you would like the build script to
 # pause after each major section.
-INTERACTIVE=NO
+INTERACTIVE=YES
 
 # A "YES" value will build the latest code from GitHub on the master branch.
 # A "NO" value will use the 2.6.1 tarball downloaded from googlecode.com.
@@ -64,19 +64,20 @@ mkdir -p "${PREFIX}/platform"
 
 PROTOBUF_GIT_URL=https://github.com/google/protobuf.git
 PROTOBUF_GIT_DIRNAME=protobuf
-PROTOBUF_RELEASE_URL=https://github.com/google/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-${PROTOBUF_VERSION}.tar.gz
+PROTOBUF_RELEASE_URL=https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protobuf-all-3.17.3.tar.gz
+# PROTOBUF_RELEASE_URL=https://github.com/google/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-${PROTOBUF_VERSION}.tar.gz
 PROTOBUF_RELEASE_DIRNAME=protobuf-${PROTOBUF_VERSION}
 
 BUILD_MACOSX_X86_64=YES
 
-BUILD_I386_IOSSIM=YES
-BUILD_X86_64_IOSSIM=YES
+BUILD_I386_IOSSIM=NO
+BUILD_X86_64_IOSSIM=NO
 
-BUILD_IOS_ARMV7=YES
-BUILD_IOS_ARMV7S=YES
+BUILD_IOS_ARMV7=NO
+BUILD_IOS_ARMV7S=NO
 BUILD_IOS_ARM64=YES
 
-PROTOBUF_SRC_DIR=/tmp/protobuf
+PROTOBUF_SRC_DIR=./tmp/protobuf
 
 # 13.4.0 - Mavericks
 # 14.0.0 - Yosemite
