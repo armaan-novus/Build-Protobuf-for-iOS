@@ -66,8 +66,8 @@ PROTOBUF_GIT_URL=https://github.com/google/protobuf.git
 PROTOBUF_GIT_DIRNAME=protobuf
 PROTOBUF_RELEASE_URL=https://github.com/protocolbuffers/protobuf/releases/download/v3.17.3/protobuf-all-3.17.3.tar.gz
 # PROTOBUF_RELEASE_URL=https://github.com/google/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-${PROTOBUF_VERSION}.tar.gz
-PROTOBUF_RELEASE_DIRNAME=protobuf
-# PROTOBUF_RELEASE_DIRNAME=protobuf-${PROTOBUF_VERSION}
+# PROTOBUF_RELEASE_DIRNAME=protobuf
+PROTOBUF_RELEASE_DIRNAME=protobuf-${PROTOBUF_VERSION}
 
 BUILD_MACOSX_X86_64=YES
 
@@ -78,7 +78,7 @@ BUILD_IOS_ARMV7=NO
 BUILD_IOS_ARMV7S=NO
 BUILD_IOS_ARM64=YES
 
-PROTOBUF_SRC_DIR=./tmp/protobuf
+PROTOBUF_SRC_DIR=./tmp/${PROTOBUF_RELEASE_DIRNAME} 
 
 # 13.4.0 - Mavericks
 # 14.0.0 - Yosemite
@@ -174,6 +174,7 @@ echo "$(tput sgr0)"
         fi
         curl --location ${PROTOBUF_RELEASE_URL} --output ${PROTOBUF_RELEASE_DIRNAME}.tar.gz
         tar xvf ${PROTOBUF_RELEASE_DIRNAME}.tar.gz
+        mkdir ./tmp/ # hack
         mv "${PROTOBUF_RELEASE_DIRNAME}" "${PROTOBUF_SRC_DIR}"
         rm ${PROTOBUF_RELEASE_DIRNAME}.tar.gz
 
