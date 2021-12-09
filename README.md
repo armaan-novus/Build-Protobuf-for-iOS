@@ -11,7 +11,7 @@ The easiest way to use this script is to simply clone the gist onto your
 machine using the following command:
 
 ```
-$ git clone https://gist.github.com/9487468ae3375d0db0cc.git build-protobuf
+$ git clone https://github.com/armaan-novus/Build-Protobuf-for-iOS.git
 ```
 
 # Performing the Build
